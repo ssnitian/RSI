@@ -16,7 +16,7 @@ class handler(BaseHTTPRequestHandler):
 
 def getRSI():
 	flock_url = 'https://api.flock.com/hooks/sendMessage/524b8519-9a8f-4ef0-85e6-67321ae7adf9'
-	requests.post(flock_url,data=json.dumps(```{
+	requests.post(flock_url,data=json.dumps('''{
     "text": "This is a test message.",
     "attachments": [
         {
@@ -38,5 +38,5 @@ def getRSI():
             }
         }
     ]
-}```))
+}'''))
 	return
