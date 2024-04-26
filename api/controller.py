@@ -5,14 +5,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import date
 import ta
-from http.server import BaseHTTPRequestHandler
  
-class handler(BaseHTTPRequestHandler):
- 
-    def do_GET(self):
-        getRSI()
-        self.send_response(200)
-        return
+getRSI()
 
 def getRSI():
 	flock_url = 'https://api.flock.com/hooks/sendMessage/524b8519-9a8f-4ef0-85e6-67321ae7adf9'
