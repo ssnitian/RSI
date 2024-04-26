@@ -5,8 +5,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import date
 import ta
- 
-getRSI()
 
 def getRSI():
 	flock_url = 'https://api.flock.com/hooks/sendMessage/524b8519-9a8f-4ef0-85e6-67321ae7adf9'
@@ -34,3 +32,6 @@ def getRSI():
     ]
 }'''))
 	return
+
+
+getRSI()
