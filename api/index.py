@@ -57,7 +57,7 @@ def getRSI():
         ax2.axhline(20, linestyle='--', linewidth=1.5, color='green')
         # Overbought
         ax2.axhline(80, linestyle='--', linewidth=1.5, color='red')
-        plt.savefig('test1.png')
+        plt.savefig('/tmp/test1.png')
 
         myobj = {'text': df.to_json(orient='values')}
         print(myobj)
