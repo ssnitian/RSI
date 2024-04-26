@@ -12,9 +12,10 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         getRSI()
         self.send_response(200)
-        self.send_header('Content-type','text/plain')
+        self.send_header('Content-type','image/x-png')
         self.end_headers()
-        self.wfile.write('Hello, world!'.encode('utf-8'))
+        with open('/tmp/test1.png', 'r') as file:
+          self.wfile.write(file)
         return
 
 def getRSI():
