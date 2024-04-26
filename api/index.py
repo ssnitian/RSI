@@ -14,8 +14,8 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','image/x-png')
         self.end_headers()
-        with open('/tmp/test1.png', 'r') as file:
-          self.wfile.write(file)
+        with open('/tmp/test1.png', 'rb') as file:
+          self.wfile.write(file.read())
         return
 
 def getRSI():
