@@ -16,8 +16,6 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         with open('/tmp/test1.png', 'rb') as file:
           self.wfile.write(file.read())
-        with open('/tmp/test1.png', 'rb') as file:
-          self.wfile.write(file.read())
         return
 
 def getRSI():
@@ -64,7 +62,7 @@ def getRSI():
 
         myobj = {'text': df.to_json(orient='values')}
         print(myobj)
-        x = requests.post(flock_url,data=json.dumps(myobj))
+        # x = requests.post(flock_url,data=json.dumps(myobj))
 
     else:
         print(f"Error: {response.status_code} - {response.text}")

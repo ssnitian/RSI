@@ -12,11 +12,31 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         getRSI()
         self.send_response(200)
-        self.send_header('Content-type','image/x-png')
-        self.end_headers()
-        with open('/tmp/test1.png', 'rb') as file:
-          self.wfile.write(file.read())
         return
 
 def getRSI():
+	flock_url = 'https://api.flock.com/hooks/sendMessage/524b8519-9a8f-4ef0-85e6-67321ae7adf9'
+	requests.post(flock_url,data=json.dumps(```{
+    "text": "This is a test message.",
+    "attachments": [
+        {
+            "title": "attachment title",
+            "description": "attachment description",
+            "views": {
+                "image": {
+                    "original": {
+                        "src": "https://rsi-umber.vercel.app/api/image",
+                        "width": 400,
+                        "height": 400
+                    },
+                    "thumbnail": {
+                        "src": "https://rsi-umber.vercel.app/api/image",
+                        "width": 400,
+                        "height": 400
+                    }
+                }
+            }
+        }
+    ]
+}```))
 	return
