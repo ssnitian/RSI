@@ -11,9 +11,16 @@ from http.server import BaseHTTPRequestHandler
 class handler(BaseHTTPRequestHandler):
  
     def do_GET(self):
-        parsed_url = urlparse(self.path)
-        query_params = parse_qs(parsed_url.query)
-        param1 = query_params.get('sym', [None])[0]
+        url_parts = self.path.split('?')
+        path = url_parts[0]
+        query_params = {}
+        if len(url_parts) > 1:
+            for query in url_parts[1].split('&'):
+                key, value = query.split('=')
+                query_params[key] = value
+
+        # Extract parameters
+        param1 = query_params.get('sym', None)
         getRSI(param1)
         self.send_response(200)
         self.send_header('Content-type','image/x-png')
