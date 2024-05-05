@@ -19,8 +19,8 @@ class handler(BaseHTTPRequestHandler):
         return
 
 def getRSI():
-    end_date = datetime.now().strftime('%Y-%m-%d')
-    start_date = (datetime.now() + timedelta(days=-365)).strftime('%Y-%m-%d')
+    end_date = '2024-04-20'
+    start_date = '2023-04-20'
     base_url = 'https://api.upstox.com/v2/historical-candle/'
     sym = 'NSE_INDEX|Nifty 50'
     new_url = base_url + sym + '/day/'+end_date+'/'+start_date
