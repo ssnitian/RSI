@@ -5,13 +5,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime,timedelta,date
 import ta
-from urllib.parse import parse_qsl, urljoin, urlparse3
+from urllib.parse import parse_qsl, urljoin, urlparse
 from http.server import BaseHTTPRequestHandler
  
 class handler(BaseHTTPRequestHandler):
  
     def do_GET(self):
-        parsed_url = urlparse3(self.path)
+        parsed_url = urlparse(self.path)
         query_params = parse_qs(parsed_url.query)
         param1 = query_params.get('sym', [None])[0]
         getRSI(param1)
