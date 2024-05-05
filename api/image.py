@@ -11,6 +11,7 @@ from http.server import BaseHTTPRequestHandler
 class handler(BaseHTTPRequestHandler):
  
     def do_GET(self):
+        print(self.path)
         url_parts = self.path.split('?')
         path = url_parts[0]
         query_params = {}
@@ -21,6 +22,7 @@ class handler(BaseHTTPRequestHandler):
 
         # Extract parameters
         param1 = query_params.get('sym', None)
+        print(param1)
         getRSI(param1)
         self.send_response(200)
         self.send_header('Content-type','image/x-png')
