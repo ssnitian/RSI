@@ -10,8 +10,8 @@ from http.server import BaseHTTPRequestHandler
 class handler(BaseHTTPRequestHandler):
  
     def do_GET(self,sym):
-        getRSI(sym)
         self.sym=sym
+        getRSI(sym)
         self.send_response(200)
         self.send_header('Content-type','image/x-png')
         self.end_headers()
