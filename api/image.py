@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime,timedelta,date
 import ta
+from urllib.parse import parse_qsl, urljoin, urlparse
 from http.server import BaseHTTPRequestHandler
  
 class handler(BaseHTTPRequestHandler):
