@@ -12,8 +12,8 @@ def getRSI():
     "text": "This is a test message.",
     "attachments": [
         {
-            "title": "attachment title",
-            "description": "attachment description",
+            "title": "From Controller",
+            "description": "NIFTY 50 RSI",
             "views": {
                 "image": {
                     "original": {
