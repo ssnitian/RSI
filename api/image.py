@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from datetime import date
+from datetime import datetime,timedelta,date
 import ta
 from http.server import BaseHTTPRequestHandler
  
@@ -30,7 +30,7 @@ def getRSI():
     headers = {
         'Accept': 'application/json'
     }
-    response = requests.get(url, headers=headers)
+    response = requests.get(new_url, headers=headers)
 
     if response.status_code == 200:
         data = response.json()
@@ -71,3 +71,6 @@ def getRSI():
 
     else:
         print(f"Error: {response.status_code} - {response.text}")
+
+
+getRSI()
