@@ -1,7 +1,10 @@
 {
   "functions": {
+    "api/image.py": {
+      "memory": 1024
+    },
     "api/*.py": {
-      "memory": 3072
+      "memory": 1024
     }
   }
 }
