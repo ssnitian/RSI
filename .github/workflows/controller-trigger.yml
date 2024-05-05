@@ -3,7 +3,9 @@
 
 name: Controller Trigger
 
-on: workflow_dispatch
+on: 
+  schedule:
+    - cron: "0 9 * * *"
   
 
 permissions:
