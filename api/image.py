@@ -9,9 +9,11 @@ from http.server import BaseHTTPRequestHandler
  
 class handler(BaseHTTPRequestHandler):
  
-    def do_GET(self,sym):
-        self.sym=sym
-        getRSI(sym)
+    def do_GET(self):
+        parsed_url = urlparse(self.path)
+        query_params = parse_qs(parsed_url.query)
+        param1 = query_params.get('sym', [None])[0]
+        getRSI(param1)
         self.send_response(200)
         self.send_header('Content-type','image/x-png')
         self.end_headers()
