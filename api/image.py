@@ -9,20 +9,19 @@ from http.server import BaseHTTPRequestHandler
  
 class handler(BaseHTTPRequestHandler):
  
-    def do_GET(self):
-        getRSI()
+    def do_GET(self,sym):
+        getRSI(sym)
         self.send_response(200)
         self.send_header('Content-type','image/x-png')
         self.end_headers()
-        with open('/tmp/test1.png', 'rb') as file:
+        with open('/tmp/'+sym+'.png', 'rb') as file:
           self.wfile.write(file.read())
         return
 
-def getRSI():
+def getRSI(sym):
     end_date = '2025-04-20'
     start_date = '2023-04-20'
     base_url = 'https://api.upstox.com/v2/historical-candle/'
-    sym = 'NSE_INDEX|Nifty 50'
     new_url = base_url + sym + '/day/'+end_date+'/'+start_date
     print(new_url)
     flock_url = 'https://api.flock.com/hooks/sendMessage/524b8519-9a8f-4ef0-85e6-67321ae7adf9'
@@ -63,7 +62,7 @@ def getRSI():
         ax2.axhline(20, linestyle='--', linewidth=1.5, color='green')
         # Overbought
         ax2.axhline(80, linestyle='--', linewidth=1.5, color='red')
-        plt.savefig('/tmp/test1.png')
+        plt.savefig('/tmp/'+sym+'.png')
 
         myobj = {'text': df.to_json(orient='values')}
         print(myobj)
