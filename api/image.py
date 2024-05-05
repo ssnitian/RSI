@@ -66,11 +66,8 @@ def getRSI():
         plt.savefig('/tmp/test1.png')
 
         myobj = {'text': df.to_json(orient='values')}
-        # print(myobj)
+        print(myobj)
         # x = requests.post(flock_url,data=json.dumps(myobj))
 
     else:
         print(f"Error: {response.status_code} - {response.text}")
-
-
-getRSI()
