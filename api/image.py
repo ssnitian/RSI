@@ -19,7 +19,12 @@ class handler(BaseHTTPRequestHandler):
         return
 
 def getRSI():
-    url = 'https://api.upstox.com/v2/historical-candle/NSE_INDEX|Nifty 50/day/2024-04-20/2023-04-20'
+    end_date = datetime.now().strftime('%Y-%m-%d')
+    start_date = (datetime.now() + timedelta(days=-365)).strftime('%Y-%m-%d')
+    base_url = 'https://api.upstox.com/v2/historical-candle/'
+    sym = 'NSE_INDEX|Nifty 50'
+    new_url = base_url + sym + '/day/'+end_date+'/'+start_date
+    print(new_url)
     flock_url = 'https://api.flock.com/hooks/sendMessage/524b8519-9a8f-4ef0-85e6-67321ae7adf9'
 
     headers = {
@@ -61,7 +66,7 @@ def getRSI():
         plt.savefig('/tmp/test1.png')
 
         myobj = {'text': df.to_json(orient='values')}
-        print(myobj)
+        # print(myobj)
         # x = requests.post(flock_url,data=json.dumps(myobj))
 
     else:
