@@ -27,7 +27,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','image/x-png')
         self.end_headers()
-        with open('/tmp/'+sym+'.png', 'rb') as file:
+        with open('/tmp/'+param1+'.png', 'rb') as file:
           self.wfile.write(file.read())
         return
 
