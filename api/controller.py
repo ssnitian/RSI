@@ -8,7 +8,7 @@ import ta
 
 def getRSI():
     flock_url = 'https://api.flock.com/hooks/sendMessage/524b8519-9a8f-4ef0-85e6-67321ae7adf9'
-    symbol_list = ['NSE_INDEX|Nifty 50','NSE_INDEX|Nifty Bank']
+    symbol_list = ['NSE_INDEX|Nifty 50','NSE_INDEX|Nifty Bank','NSE_EQ|INE002A01018']
     payload = {
         "text": "Relative Strength Index",
         "attachments": []
