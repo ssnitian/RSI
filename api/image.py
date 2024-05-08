@@ -66,7 +66,7 @@ def getRSI(sym):
         ax2 = plt.subplot2grid((10,1), (5,0), rowspan = 4, colspan = 1)
 
         ax1.plot(df['Close'], linewidth=2)
-        ax1.set_title(sym + ' Close Price')
+        ax1.set_title(requests.utils.unquote(sym) + ' Close Price')
         ax2.set_title('Relative Strength Index')
         ax2.plot(rsi, color='orange', linewidth=1)
 

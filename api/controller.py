@@ -11,45 +11,29 @@ def getRSI():
     symbol_list = ['NSE_INDEX|Nifty 50','NSE_INDEX|Nifty Bank']
     payload = {
         "text": "Relative Strength Index",
-        "attachments": [
-            {
-                "title": "From Controller",
-                "description": "NSE_INDEX|Nifty Bank",
-                "views": {
-                    "image": {
-                        "original": {
-                            "src": "https://rsi-umber.vercel.app/api/image?sym=NSE_INDEX%7CNifty%20Bank",
-                            "width": 400,
-                            "height": 400
-                        },
-                        "thumbnail": {
-                            "src": "https://rsi-umber.vercel.app/api/image?sym=NSE_INDEX%7CNifty%20Bank",
-                            "width": 400,
-                            "height": 400
-                        }
-                    }
-                }
-            },
-            {
-                "title": "From Controller",
-                "description": "NSE_INDEX|Nifty 50",
-                "views": {
-                    "image": {
-                        "original": {
-                            "src": "https://rsi-umber.vercel.app/api/image?sym=NSE_INDEX|Nifty 50",
-                            "width": 400,
-                            "height": 400
-                        },
-                        "thumbnail": {
-                            "src": "https://rsi-umber.vercel.app/api/image?sym=NSE_INDEX|Nifty 50",
-                            "width": 400,
-                            "height": 400
-                        }
-                    }
-                }
-            }
-        ]
+        "attachments": []
     }
+    for sym in symbol_list:
+        payload['attachments'].append({
+                "title": "From Controller",
+                "description": sym,
+                "views": {
+                    "image": {
+                        "original": {
+                            "src": "https://rsi-umber.vercel.app/api/image?sym="+sym,
+                            "width": 400,
+                            "height": 400
+                        },
+                        "thumbnail": {
+                            "src": "https://rsi-umber.vercel.app/api/image?sym="+sym,
+                            "width": 400,
+                            "height": 400
+                        }
+                    }
+                }
+            })
+
+    print(payload)
     requests.post(flock_url,json=payload)
     return
 
