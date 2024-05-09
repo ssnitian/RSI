@@ -21,13 +21,13 @@ def getRSI():
                     "image": {
                         "original": {
                             "src": "https://rsi-umber.vercel.app/api/image?sym="+sym,
-                            "width": 200,
-                            "height": 200
+                            "width": 400,
+                            "height": 400
                         },
                         "thumbnail": {
                             "src": "https://rsi-umber.vercel.app/api/image?sym="+sym,
-                            "width": 200,
-                            "height": 200
+                            "width": 400,
+                            "height": 400
                         }
                     }
                 }
