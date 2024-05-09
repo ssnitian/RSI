@@ -16,7 +16,6 @@ def getRSI():
     }
     for sym,sym_name in zip(symbol_list,symbol_name):
         payload['attachments']=[{
-                "title": "From Controller",
                 "description": sym_name,
                 "views": {
                     "image": {
