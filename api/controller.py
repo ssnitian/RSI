@@ -15,20 +15,19 @@ def getRSI():
         "attachments": []
     }
     for sym,sym_name in zip(symbol_list,symbol_name):
+        payload['text']="Relative Strength Index : " + sym_name
         payload['attachments']=[{
-                "title": "From Controller",
-                "description": sym_name,
                 "views": {
                     "image": {
                         "original": {
                             "src": "https://rsi-umber.vercel.app/api/image?sym="+sym,
-                            "width": 400,
-                            "height": 400
+                            "width": 200,
+                            "height": 200
                         },
                         "thumbnail": {
                             "src": "https://rsi-umber.vercel.app/api/image?sym="+sym,
-                            "width": 400,
-                            "height": 400
+                            "width": 200,
+                            "height": 200
                         }
                     }
                 }
