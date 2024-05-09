@@ -8,7 +8,7 @@ import ta
 
 def getRSI():
     flock_url = 'https://api.flock.com/hooks/sendMessage/524b8519-9a8f-4ef0-85e6-67321ae7adf9'
-    symbol_list = ['NSE_INDEX%7CNifty%2050','NSE_INDEX|Nifty%20Bank','NSE_EQ|INE002A01018','NSE_EQ|INE467B01029']
+    symbol_list = ['NSE_INDEX%7CNifty%2050','NSE_INDEX%7CNifty%20Bank','NSE_EQ%7CINE002A01018','NSE_EQ%7CINE467B01029']
     symbol_name = ['Nifty 50','Nifty Bank','Reliance','TCS']
     for sym,sym_name in zip(symbol_list,symbol_name):
         payload = {}
